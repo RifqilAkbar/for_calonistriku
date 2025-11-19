@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>for you sayang❤️</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+    }
+
+    
+    .page {
+      display: none;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .page.active {
+      display: flex;
+    }
+
+    #page1 {
+      background: pink;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background: deeppink;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 10px;
+      font-size: 18px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.3s;
+      border: none;
+    }
+
+    .btn:hover {
+      background: hotpink;
+    }
+
+    /* Halaman Kedua */
+    #page2 {
+      background: white;
+      overflow-y: auto; /* bisa scroll di HP */
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .box {
+      background: white;
+      border: 2px solid pink;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+      max-width: 500px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+      z-index: 10;
+
+      /* 📌 Teks rapi */
+      text-align: justify;
+      line-height: 1.6;
+      word-spacing: 2px;
+    }
+
+    /* Animasi Love */
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -10px;
+      color: pink;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+
+  <div id="page1" class="page active">
+    <h1>Hai sayang coba tekan 💕</h1>
+    <button class="btn" onclick="nextPage()">Klik</button>
+  </div>
+
+ 
+  <div id="page2" class="page">
+    <audio id="music" loop>
+      <source src="musik.mp3" type="audio/mpeg">
+      Browser kamu tidak mendukung audio.
+    </audio>
+
+    <div class="box">
+      <h2> haii sayang</h2>
+      <p>
+      “haii sayanggku,cintakuu,cantikku,calon istriku heheh aamiin, aku mau ngomong sama kamu
+      kalau aku berubah pikirann, aku gamau ninggalin kamu sendiri, aku mau nemenin kamu terus,
+      maaf kalau aku buat kamu khawatir iyaa aku keluar ke deket sungai disini aku ngerungin,maaf kalau hp aku ga aku bawa
+      aku masih mau memperbaiki semuanya sama kamuu, maaf kalau aku segininya sama kamuu, aku keterlaluan,
+      aku minta maaf banget, aku sama ayang terus koo aku temenin ayang terus, ayang mau kan perbaiki semua nyaa
+      pertahanin semua nya perjuangin semuanya untuk hubungan kitaa? aku tau koo ini ga lucu emang aku bingung harus gimana
+      iyaa aku pasti menuhin wishlist kita yang kita rencanain yang kita omongin terus kalau kita ketemu,
+      aku juga minta maaf belom bisa jadi yang terbaik buat kamu jauh dari kata sempurna atau dari kata terbaik,
+      tapi aku usahain semua buat kamu, aku gamau kamu ngerasain apa yang kamu rasain dulu sma masalalu kamu, ayo kita usahain
+      tanggal lahir kamu kita lamaran dan tanggal lahir aku kita akad, tunggu aku lulus aku bakal nepati janji sma omongan aku,
+      temenin aku sampe aku sukses aku gaa bakal ngelupain kamu jg gaa akan ganti cewe atau cari cewe lagi, ayo kita perjuangin semuanya sama"
+      aku sayang banget sama kamu,aku mau kamu bahagia terus sama aku,aku gamau kamu ngerasain bosen sama aku,aku mau kamu kamu
+      senyum terus sama aku,ngerasa nyaman terus sama kamu, jujur aku mau ngerasain di cintai sama kamu terus, disayang sama kamu terus
+      aku mau ngerasain di pehatiin sama kamu terus, aku gamau di tinggalin,aku mau kamu di samping aku terus sampai tua nanti hehehee
+      aku janji aku bakal berusaha jadi yang terbaik buat kamu,aku minta maaf udah buat khawatir buat kamu nangis
+      udah yaa sayang ayo kita perbaiki semuanya yang hilang" kita balikin okayy,aku janji aku bakal berubah jadi lebih baik buat kamu
+      aku janji bakal bahagia in kamu aku sayang kita perbaiki semuanyaa aku masih mau sama kamu terus, kamu juga kan? 
+      AKU SAYANGG BANGET SAMA KAMU,AKU CINTA BANGET SAMA KAMU,AKU MAU KAMU JADI MILIK AKU TERUS, MAAF BUAT SEMUANYA yaa
+      ❤️I am here always for you forever💕”
+      </p>
+    </div>
+
+    <div class="hearts"></div>
+  </div>
+
+  <script>
+    function nextPage() {
+      document.getElementById("page1").classList.remove("active");
+      document.getElementById("page2").classList.add("active");
+
+      
+      const music = document.getElementById("music");
+      if (music) {
+        music.play().catch(() => {
+          console.log("Autoplay musik diblokir, halaman tetap muncul 👍");
+        });
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      document.querySelector(".hearts").appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
